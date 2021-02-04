@@ -1,3 +1,3 @@
-<!-- docs/_sidebar.md -->
+<!-- docs/sidebar.md -->
 * [首页](zh-cn/)  
 * [指南](zh-cn/guide)
