@@ -1,3 +1,11 @@
-<!-- docs/sidebar.md -->
-* [首页](zh-cn/)  
-* [指南](zh-cn/guide)
+- Java基础
+  - [基础知识](java/Base.md)
+  - [集合](java/Collection.md)
+
+- 数据库
+  - [Redis](database/Redis.md)
+  - [Mysql](database/Mysql.md)
+
+- 技术参考
+  - [关于我们](about-us.md)
+
