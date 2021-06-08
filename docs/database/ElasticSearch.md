@@ -49,9 +49,27 @@ POST dm_cloudlocation_all_XX/index/6e27fc7e69a087706d1dbb1c155c87d7/_update
 }
 ```
 ## ES如何删除数据   
-```
+``` 第一种
 DELETE  dm_cloudlocation_all_XX/index/a48246b3d4c2fc9c9142e6b92a58f21e
 ```   
+``` 第二种
+GET dm_cloudlocation_all_XX/_delete_by_query
+{
+  "query": {
+    "bool": {
+      "must": [
+        {
+          "term": {
+            "park_id": {
+              "value": "12345678"
+            }
+          }
+        }
+      ]
+    }
+  }
+}
+```
 ## ES使用脚本编辑数据
 ```
 POST dm_cloudlocation_all_XX/_update_by_query
