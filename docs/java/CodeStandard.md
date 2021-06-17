@@ -4,7 +4,8 @@
 3.[多异常合并](#多异常合并)  
 4.[Integer.valueOf与Integer.parseInt的使用](#区别valueof与parseint使用)  
 5.[创建空对象优化](#创建空对象优化)  
-6.[拒绝魔法值](#拒绝魔法值)
+6.[拒绝魔法值](#拒绝魔法值)  
+7.[推荐使用try-with-resources](#推荐使用try-with-resources)
 
 ## 避免内嵌多个if  
 错误示例代码  
@@ -87,4 +88,34 @@ String value = System.getProperty("project.name");
 正确示例代码  
 ```java
 String value = System.getProperty(IdentifyConstants.PROJECT_NAME_PROPERTY);
+```
+
+## 推荐使用try-with-resources  
+Java 中类似于`InputStream`、`OutputStream` 、`Scanner` 、`PrintWriter`等的资源都需要我们调用`close()`方法  
+错误示例代码  
+```java
+        //读取文本文件的内容
+        Scanner scanner = null;
+        try {
+            scanner = new Scanner(new File("D://read.txt"));
+            while (scanner.hasNext()) {
+                System.out.println(scanner.nextLine());
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } finally {
+            if (scanner != null) {
+                scanner.close();
+            }
+        }
+```  
+正确示例代码  
+```java
+        try (Scanner scanner = new Scanner(new File("test.txt"))) {
+            while (scanner.hasNext()) {
+                System.out.println(scanner.nextLine());
+            }
+        } catch (FileNotFoundException fnfe) {
+            fnfe.printStackTrace();
+        }
 ```
