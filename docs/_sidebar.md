@@ -2,6 +2,7 @@
   - [编码规范](java/CodeStandard.md)
   - [基础知识](java/Base.md)
   - [集合](java/Collection.md)
+  - [队列](java/Queue.md)
 
 - 数据库
   - [Redis](database/Redis.md)
