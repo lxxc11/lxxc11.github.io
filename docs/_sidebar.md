@@ -4,7 +4,8 @@
   - [集合](java/Collection.md)
   - [队列](java/Queue.md)
   - [树](java/Tree.md)
-  - [并发](java/Concurrent.md)
+  - [并发](java/Concurrent.md)  
+  - [锁](java/Lock.md)
 
 - 数据库
   - [Redis](database/Redis.md)
